@@ -1,0 +1,57 @@
+<div style="text-align: center;">
+    <mat-form-field class="example-full-width">
+        <mat-label>Albarán</mat-label>
+        <input type="number" matInput [formControl]="albaranFormControl" placeholder="Ej. 101010101010" autocomplete="off">
+        <mat-error *ngIf="albaranFormControl.hasError('required')">
+          Albaran obligatorio
+        </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width">
+        <mat-label>Código</mat-label>
+        <input type="number" matInput [formControl]="codigoFormControl" placeholder="Ej. 101010" autocomplete="off">
+        <mat-error *ngIf="codigoFormControl.hasError('required')">
+          Codigo obligatorio
+        </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width">
+        <mat-label>Nombre</mat-label>
+        <input type="text" matInput [formControl]="nombreFormControl" placeholder="Ej. Paracetamol" autocomplete="off">
+        <mat-error *ngIf="nombreFormControl.hasError('required')">
+          Nombre obligatorio
+        </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width">
+        <mat-label>Fecha</mat-label>
+        <input type="date" matInput [formControl]="fechaFormControl" placeholder="Ej. 12-2-2022" autocomplete="off">
+        <mat-error *ngIf="fechaFormControl.hasError('required')">
+          Fecha obligatoria
+        </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width">
+        <mat-label>Unidades</mat-label>
+        <input type="number" matInput [formControl]="unidadesFormControl" placeholder="Ej. 3" autocomplete="off">
+        <mat-error *ngIf="unidadesFormControl.hasError('required')">
+          Unidades obligatorio
+        </mat-error>
+    </mat-form-field>
+
+    
+<form novalidate enctype="multipart/form-data" style="margin-bottom: 20px;">
+  <div>
+    <div class="file-text">
+      <label class="custom-file-label" for="pdf">Elige el archivo PDF</label>
+    </div>
+    <input type="file" class="custom-file-input" id="pdf" #pdfInputFile
+    (change)="onFileChange($event)" accept="application/pdf, image/jpeg">
+  </div>
+</form>
+    
+    <br>
+
+    <button style="width: 20%; margin-right: 40px;" mat-raised-button color="primary" (click)="guardar()">Crear</button>
+    <button style="width: 20%;" mat-raised-button color="warn" (click)="exit()">Volver</button>
+</div>

@@ -1,0 +1,30 @@
+.header_container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    mat-form-field {
+        padding: 10px;
+        width: 80%;
+    }
+
+    button {
+        width: 18%;
+        padding: 10px;
+        height: 50px;
+    }
+}
+
+table{
+    width: 100%;
+}
+  
+td, th {
+    width: 16.6%;
+    text-align: center !important;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
