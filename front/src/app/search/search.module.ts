@@ -1,3 +1,4 @@
+import { MatDialogModule } from '@angular/material/dialog';
 import { SearchComponent } from './view/search.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
-    SearchComponent
+    SearchComponent,
   ],
   imports: [
     CommonModule,
@@ -21,7 +22,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [SearchComponent]

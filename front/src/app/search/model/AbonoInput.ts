@@ -3,7 +3,7 @@ export interface Abono {
     albaran: string,
     codigo: string,
     nombre: string,
-    fecha: Date,
+    fecha: string,
     unidades: number,
     archivo: string
 }

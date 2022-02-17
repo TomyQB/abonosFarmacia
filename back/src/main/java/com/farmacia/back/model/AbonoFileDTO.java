@@ -15,7 +15,7 @@ public class AbonoFileDTO {
     private String albaran;
     private String codigo;
     private String nombre;
-    private Date fecha;
+    private String fecha;
     private int unidades;
     private MultipartFile archivo; 
     

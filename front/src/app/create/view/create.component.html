@@ -1,3 +1,8 @@
+<div class="header_container">
+  <img class="imagen" src="https://res.cloudinary.com/dpx98ncwr/image/upload/v1644667399/encabezado_xa6mi9.png" alt="">
+  <label>CONTROL DE ABONOS</label>
+</div>
+
 <div style="text-align: center;">
     <mat-form-field class="example-full-width">
         <mat-label>Albarán</mat-label>
@@ -17,7 +22,7 @@
     
     <mat-form-field class="example-full-width">
         <mat-label>Nombre</mat-label>
-        <input type="text" matInput [formControl]="nombreFormControl" placeholder="Ej. Paracetamol" autocomplete="off">
+        <input class="capitalize" type="text" matInput [formControl]="nombreFormControl" placeholder="Ej. Paracetamol" autocomplete="off">
         <mat-error *ngIf="nombreFormControl.hasError('required')">
           Nombre obligatorio
         </mat-error>
@@ -25,7 +30,7 @@
     
     <mat-form-field class="example-full-width">
         <mat-label>Fecha</mat-label>
-        <input type="date" matInput [formControl]="fechaFormControl" placeholder="Ej. 12-2-2022" autocomplete="off">
+        <input type="text" matInput [formControl]="fechaFormControl" placeholder="Ej. 12/2/2022" autocomplete="off">
         <mat-error *ngIf="fechaFormControl.hasError('required')">
           Fecha obligatoria
         </mat-error>
@@ -52,6 +57,5 @@
     
     <br>
 
-    <button style="width: 20%; margin-right: 40px;" mat-raised-button color="primary" (click)="guardar()">Crear</button>
-    <button style="width: 20%;" mat-raised-button color="warn" (click)="exit()">Volver</button>
+    <button style="width: 20%; margin-right: 40px; margin-bottom: 40px;" mat-raised-button class="verde" (click)="guardar()">Crear</button>
 </div>

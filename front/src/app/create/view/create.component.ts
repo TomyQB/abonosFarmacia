@@ -15,6 +15,7 @@ export class CreateComponent implements OnInit {
 
   abono: Abono = {};
   pdf: File | undefined;
+  fechaString: String = "";
 
   
   albaranFormControl = new FormControl('', [
@@ -40,6 +41,13 @@ export class CreateComponent implements OnInit {
   constructor(private httpService: HttpService, private router: Router) { }
 
   ngOnInit(): void {
+    var date = new Date();
+    var dd = String(date.getDate() - 1).padStart(2, '0');
+    var mm = String(date.getMonth() + 1).padStart(2, '0');
+    var yyyy = date.getFullYear();
+
+    this.fechaString = dd + '/' + mm + '/' + yyyy;
+    this.fechaFormControl.setValue(this.fechaString);
   }
 
   onFileChange(event: any) {
@@ -63,19 +71,10 @@ export class CreateComponent implements OnInit {
 
         this.httpService.createAbono(this.abono).subscribe(() => {
           alert("Abono creado correctamente")
-          this.albaranFormControl.setValue(null);
-          this.codigoFormControl.setValue(null);
-          this.nombreFormControl.setValue(null);
-          this.unidadesFormControl.setValue(null);
-          this.pdf = null;
+          this.router.navigateByUrl("/search");
         })
 
       })
     } else alert("Todos los campos obligatorios")
   }
-
-  exit() {
-    this.router.navigateByUrl("/search")
-  }
-
 }

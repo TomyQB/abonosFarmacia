@@ -1,4 +1,5 @@
-.header_container {
+
+.filtro_container {
     display: flex;
     align-items: center;
     width: 100%;
@@ -28,3 +29,19 @@ td, th {
     display: flex;
     justify-content: space-between;
 }
+
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: green !important;
+   }
+  
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: green !important;
+  } 
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: green !important;;
+  }

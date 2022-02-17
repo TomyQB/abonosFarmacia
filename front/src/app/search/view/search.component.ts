@@ -1,10 +1,11 @@
+import { ModalDeleteComponent } from '../../modal-delete/modal-delete.component';
 import { Abono } from '../model/AbonoInput';
 import { HttpService } from '../service/http.service';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -17,8 +18,12 @@ export class SearchComponent implements OnInit {
 
   
   filtroFormControl = new FormControl('');
+  
+  dialogConfig: MatDialogConfig = {
+    width: '30%',
+  }
 
-  constructor(private httpService: HttpService, private router: Router) { }
+  constructor(private httpService: HttpService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getAbonos();
@@ -36,9 +41,16 @@ export class SearchComponent implements OnInit {
   }
 
   delete(id: number) {
-    this.httpService.delete(id).subscribe(() => {
-      this.getAbonos();
-    });
+    
+    const dialogRef = this.dialog.open(ModalDeleteComponent, this.dialogConfig)
+    dialogRef.afterClosed().subscribe(res => {
+      if(res) {
+        console.log("borrar")
+        this.httpService.delete(id).subscribe(() => {
+          this.getAbonos();
+        });
+      }
+    })
   }
 
   nuevo() {
