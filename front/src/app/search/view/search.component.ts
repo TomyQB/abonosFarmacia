@@ -26,6 +26,9 @@ export class SearchComponent implements OnInit {
   constructor(private httpService: HttpService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    if(!localStorage.getItem("user")) {
+      this.router.navigateByUrl("/login");
+    }
     this.getAbonos();
   }
 

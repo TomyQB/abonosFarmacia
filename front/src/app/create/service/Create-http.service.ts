@@ -3,19 +3,19 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.prod'
 import { HttpClient, HttpParams } from '@angular/common/http'
-import { Abono, AbonoFormData } from '../model/AbonoOutput';
+import { AbonoOutput, AbonoFormData } from '../model/Abono';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HttpService {
+export class CreateHttpService {
 
   url = environment.url
 
   constructor(private http: HttpClient) { }
 
-  createAbono(abono: Abono): Observable<Abono> {
-    return this.http.post<Abono>(this.url + '/create', abono);
+  createAbono(abono: AbonoOutput): Observable<AbonoOutput> {
+    return this.http.post<AbonoOutput>(this.url + '/create', abono);
   }
 
   uploadPDF(pdf: File): Observable<File> {

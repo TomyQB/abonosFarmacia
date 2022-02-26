@@ -6,7 +6,7 @@ import java.util.Optional;
 
 import com.farmacia.back.mapper.AbonoMapper;
 import com.farmacia.back.model.Abono;
-import com.farmacia.back.model.AbonoDTO;
+import com.farmacia.back.model.dto.AbonoDTO;
 import com.farmacia.back.repository.AbonoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;

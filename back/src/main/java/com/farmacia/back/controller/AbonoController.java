@@ -3,8 +3,7 @@ package com.farmacia.back.controller;
 import java.io.IOException;
 import java.util.List;
 
-
-import com.farmacia.back.model.AbonoDTO;
+import com.farmacia.back.model.dto.AbonoDTO;
 import com.farmacia.back.service.AbonoService;
 
 import org.springframework.beans.factory.annotation.Autowired;

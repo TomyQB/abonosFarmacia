@@ -1,4 +1,4 @@
-export interface Abono {
+export interface AbonoOutput {
     id?: number,
     albaran?: string,
     codigo?: string,

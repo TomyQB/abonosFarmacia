@@ -1,0 +1,26 @@
+<div class="header_container">
+    <img class="imagen" src="https://res.cloudinary.com/dpx98ncwr/image/upload/v1644667399/encabezado_xa6mi9.png" alt="">
+    <label>CONTROL DE ABONOS</label>
+  </div>
+  
+  <div style="text-align: center;">
+      <mat-form-field class="example-full-width">
+          <mat-label>Nombre</mat-label>
+          <input type="text" matInput [formControl]="nameFormControl" autocomplete="on">
+          <mat-error *ngIf="nameFormControl.hasError('required')">
+            Nombre obligatorio
+          </mat-error>
+      </mat-form-field>
+      
+      <mat-form-field class="example-full-width">
+        <mat-label>Contraseña</mat-label>
+        <input type="password" matInput [formControl]="passwordFormControl" autocomplete="on">
+        <mat-error *ngIf="passwordFormControl.hasError('required')">
+          Contraseña obligatoria
+        </mat-error>
+    </mat-form-field>
+  
+      <br>
+  
+      <button style="width: 20%; margin-right: 40px; margin-bottom: 40px;" mat-raised-button class="verde" (click)="login()">Iniciar sesión</button>
+  </div>
