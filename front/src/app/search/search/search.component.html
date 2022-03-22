@@ -1,6 +1,15 @@
 <div class="header_container">
     <img class="imagen" src="https://res.cloudinary.com/dpx98ncwr/image/upload/v1644667399/encabezado_xa6mi9.png" alt="">
-    <label>CONTROL DE ABONOS</label>
+    <div class="flex_align">
+        <div class="flex_left">
+            <button mat-raised-button class="ocre" style="width: 280px;" (click)="goToHistorial()">Historial</button>
+        </div>
+        <div class="flex_center">
+            <label>CONTROL DE ABONOS</label>
+        </div>
+        <div class="flex_center">
+        </div>
+    </div>
 </div>
 
 <div class="filtro_container">
@@ -9,7 +18,9 @@
         <input matInput (keyup)="applyFilter($event)" placeholder="Paracetamol" #input>
     </mat-form-field>
 
-    <button mat-raised-button class="verde" (click)="nuevo()">Nuevo</button>
+    <div class="vertical">
+        <button mat-raised-button class="verde top" (click)="nuevo()">Nuevo</button>
+    </div>
 </div>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z3">

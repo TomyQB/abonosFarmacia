@@ -25,9 +25,31 @@ td, th {
     text-align: center !important;
 }
 
-.flex {
+.flex_align {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.flex_left {
+    flex: 1;
+    display: flex;
+    justify-content: left;
+}
+
+.flex_center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.button_icon {
+    color: #eca63c;
+    background-color: white;
+
+    mat-icon {
+        font-size: 50px;
+    }
 }
 
 

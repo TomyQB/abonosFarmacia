@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import com.farmacia.back.model.dto.AbonoDTO;
+import com.farmacia.back.service.AbonoHistoryService;
 import com.farmacia.back.service.AbonoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +24,13 @@ public class AbonoController {
     
     @Autowired
     private AbonoService abonoService;
-
+    
 
     @GetMapping("/getAllAbonos")
     public List<AbonoDTO> getAllAbonos() {
         return abonoService.getAllAbonos();
     }
-
+    
     @GetMapping("/getPDF/{id}")
     public byte[] getPDF(@PathVariable("id") Long id) {
         return abonoService.getArchivoByIdAbono(id);

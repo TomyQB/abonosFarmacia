@@ -1,0 +1,73 @@
+<div class="header_container">
+    <img class="imagen" src="https://res.cloudinary.com/dpx98ncwr/image/upload/v1644667399/encabezado_xa6mi9.png" alt="">
+
+    <div class="flex_align">
+        <div class="flex_left">
+            <button mat-raised-button class="button_icon mat-elevation-z0" (click)="goToSearch()">
+                <mat-icon >arrow_back</mat-icon>
+            </button>
+        </div>
+        <div class="flex_center">
+            <label>CONTROL DE ABONOS</label>
+        </div>
+        <div class="flex_center">
+        </div>
+    </div>
+</div>
+
+<div class="filtro_container">
+    <mat-form-field appearance="standard">
+        <mat-label>Filtro</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Paracetamol" #input>
+    </mat-form-field>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z3">
+
+    <!-- Albaran Column -->
+    <ng-container style="text-align: center;" matColumnDef="Albaran">
+    <th mat-header-cell *matHeaderCellDef class="negrita"> Albaran </th>
+    <td mat-cell *matCellDef="let element"> {{element.albaran}} </td>
+    </ng-container>
+
+    <!-- Codigo Column -->
+    <ng-container matColumnDef="Codigo">
+    <th mat-header-cell *matHeaderCellDef class="negrita"> Codigo </th>
+    <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+    </ng-container>
+
+    <!-- Nombre Column -->
+    <ng-container matColumnDef="Nombre">
+    <th mat-header-cell *matHeaderCellDef class="negrita"> Nombre </th>
+    <td mat-cell *matCellDef="let element" class="capitalize"> {{element.nombre}} </td>
+    </ng-container>
+
+    <!-- Fecha Column -->
+    <ng-container matColumnDef="Fecha">
+    <th mat-header-cell *matHeaderCellDef class="negrita"> Fecha </th>
+    <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+    </ng-container>
+    
+    <!-- Unidades Column -->
+    <ng-container matColumnDef="Unidades">
+        <th mat-header-cell *matHeaderCellDef class="negrita"> Unidades </th>
+        <td mat-cell *matCellDef="let element"> {{element.unidades}} </td>
+    </ng-container>
+    
+    <!-- Acciones Column -->
+    <ng-container matColumnDef="Acciones">
+        <th mat-header-cell *matHeaderCellDef class="negrita"> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+            <div class="flex">
+                <button mat-raised-button class="ocre" (click)="openPDF(element.id)">Ver PDF</button>
+            </div>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">Ningun dato encontrado con el filtro "{{input.value}}"</td>
+    </tr>
+</table>

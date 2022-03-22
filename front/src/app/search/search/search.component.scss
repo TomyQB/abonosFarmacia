@@ -1,0 +1,78 @@
+
+.filtro_container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    mat-form-field {
+        padding: 10px;
+        width: 80%;
+    }
+
+    padding-bottom: 20px;
+}
+
+table{
+    width: 100%;
+}
+  
+td, th {
+    width: 16.6%;
+    text-align: center !important;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex_align {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.flex_left {
+    flex: 1;
+    display: flex;
+    justify-content: left;
+}
+
+.flex_center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 18%;
+    padding: 10px;
+    height: 50px;
+    gap: 10px;
+
+    .top {
+        height: 100px;
+    }
+
+    // button {
+    //     max-height: 30px;
+    // }
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: green !important;
+   }
+  
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: green !important;
+  } 
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: green !important;;
+  }

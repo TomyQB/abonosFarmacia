@@ -60,6 +60,10 @@ export class SearchComponent implements OnInit {
     this.router.navigateByUrl("/create")
   }
 
+  goToHistorial() {
+    this.router.navigateByUrl("/search/history")
+  }
+
   openPDF(id: number) {
     this.httpService.getPDF(id).subscribe(data => {
       let file = new Blob([data], { type: 'application/pdf' });  

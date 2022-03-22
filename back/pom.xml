@@ -64,11 +64,11 @@
     	</dependency>
 
     	<!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct-processor -->
-		<dependency>
+		<!-- <dependency>
     		<groupId>org.mapstruct</groupId>
     		<artifactId>mapstruct-processor</artifactId>
     		<version>1.4.2.Final</version>
-		</dependency>
+		</dependency> -->
 	</dependencies>
 
 	<build>

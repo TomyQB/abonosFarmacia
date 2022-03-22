@@ -22,6 +22,9 @@ public class AbonoService {
     @Autowired
     private AbonoMapper abonoMapper;
 
+    @Autowired
+    private AbonoHistoryService abonoHistoryService;
+
     private byte[] file;
 
     public List<AbonoDTO> getAllAbonos() {
@@ -47,6 +50,8 @@ public class AbonoService {
     }
 
     public void deleteAbono(Long id) {
-        abonoRepository.deleteById(id);
+        Abono abono = abonoRepository.getById(id);
+        abonoHistoryService.abonoToHistory(abono);
+        abonoRepository.delete(abono);
     }
 }

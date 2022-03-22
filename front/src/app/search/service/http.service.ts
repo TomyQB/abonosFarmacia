@@ -20,10 +20,21 @@ export class HttpService {
   getPDF(id: number) {
     const httpOptions = {
       'responseType'  : 'arraybuffer' as 'json'
-      //'responseType'  : 'blob' as 'json'        //This also worked
     };
 
     return this.http.get<any>(this.url + "/getPDF/" + id, httpOptions);
+  }
+   
+  getAllAbonosHistory(): Observable<Abono[]> {
+    return this.http.get<Abono[]>(this.url + '/getAllAbonosHistory');
+  }
+  
+  getPDFHistory(id: number) {
+    const httpOptions = {
+      'responseType'  : 'arraybuffer' as 'json'
+    };
+
+    return this.http.get<any>(this.url + "/getPDFHistory/" + id, httpOptions);
   }
 
   delete(id: number) {
